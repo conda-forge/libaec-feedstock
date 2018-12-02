@@ -10,7 +10,7 @@ source:
   sha256: c1aa0d6d8c070f5b1d65a42bc64334fbd69518ea38ab566fb52880bae6f1a72e
 
 build:
-  number: 0
+  number: 1000
   skip: true  # [win]
   run_exports:
   - {{ pin_subpackage('libaec') }}

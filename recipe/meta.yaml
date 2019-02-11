@@ -1,5 +1,5 @@
 {% set name = "libaec" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: 704e5b2d341c32606e21c01217100ec01e7cae05cdef5eeaf4c09ef5adb45583
+  sha256: 7d85784afc0c4d82adae2d3a1ad2c0a9db700a49ad8f32674618b0089206cb5e
 
 build:
   number: 0

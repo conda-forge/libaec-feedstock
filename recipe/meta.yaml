@@ -24,7 +24,6 @@ requirements:
 
 test:
   commands:
-    - aec --version
     - test -f ${PREFIX}/lib/libaec${SHLIB_EXT}        # [not win]
     - test -f ${PREFIX}/lib/libsz${SHLIB_EXT}         # [not win]
     - if not exist %LIBRARY_LIB%\\aec.lib exit 1      # [win]

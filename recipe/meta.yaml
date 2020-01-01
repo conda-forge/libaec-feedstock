@@ -10,8 +10,7 @@ source:
   sha256: 7d85784afc0c4d82adae2d3a1ad2c0a9db700a49ad8f32674618b0089206cb5e
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
   run_exports:
   - {{ pin_subpackage('libaec') }}
 
@@ -19,14 +18,20 @@ requirements:
   build:
     - cmake
     - make
+    - ninja    # [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libaec${SHLIB_EXT}  # [not win]
-    - test -f ${PREFIX}/lib/libsz${SHLIB_EXT}  # [not win]
-
+    - aec --version
+    - test -f ${PREFIX}/lib/libaec${SHLIB_EXT}        # [not win]
+    - test -f ${PREFIX}/lib/libsz${SHLIB_EXT}         # [not win]
+    - if not exist %LIBRARY_LIB%\\aec.lib exit 1      # [win]
+    - if not exist %LIBRARY_BIN%\\aec.dll exit 1      # [win]
+    - if not exist %LIBRARY_LIB%\\szip.lib exit 1     # [win]
+    - if not exist %LIBRARY_BIN%\\szip.dll exit 1     # [win]
+    - if not exist %LIBRARY_INC%\\libaec.h exit 1     # [win]
 about:
   home: https://gitlab.dkrz.de/k202009/libaec
   license: BSD-2-Clause

@@ -32,6 +32,7 @@ test:
     - if not exist %LIBRARY_LIB%\\szip.lib exit 1     # [win]
     - if not exist %LIBRARY_BIN%\\szip.dll exit 1     # [win]
     - if not exist %LIBRARY_INC%\\libaec.h exit 1     # [win]
+
 about:
   home: https://gitlab.dkrz.de/k202009/libaec
   license: BSD-2-Clause

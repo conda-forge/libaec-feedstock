@@ -1,5 +1,5 @@
 {% set name = "libaec" %}
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: 7d85784afc0c4d82adae2d3a1ad2c0a9db700a49ad8f32674618b0089206cb5e
+  sha256: 563e3f9c614a6c848340eb070f01b4a915e9ebc8a67199254bf37712b92e24d3
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
   run_exports:
-  - {{ pin_subpackage('libaec') }}
+    - {{ pin_subpackage('libaec') }}
 
 requirements:
   build:
@@ -38,7 +38,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: Copyright.txt
-  summary: 'Adaptive Entropy Coding library'
+  summary: Adaptive Entropy Coding library
   description: |
     Libaec provides fast lossless compression of 1 up to 32 bit wide signed or unsigned integers (samples).
     The library achieves best results for low entropy data as often encountered in space imaging instrument

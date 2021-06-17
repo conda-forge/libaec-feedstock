@@ -10,10 +10,10 @@ source:
   sha256: 563e3f9c614a6c848340eb070f01b4a915e9ebc8a67199254bf37712b92e24d3
   # Windows doesn't support the restrict keyword
   #
-  #      sed -i "s/restrict //" src/*
+  #      sed -i "s/restrict /__restrict /" src/*
   #      git diff -u > remove_restrict.diff
   patches:                   # [win]
-    - remove_restrict.diff   # [win]
+    - windows_restrict_keyword.diff   # [win]
 
 build:
   number: 0

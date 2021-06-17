@@ -8,6 +8,12 @@ package:
 source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
   sha256: 563e3f9c614a6c848340eb070f01b4a915e9ebc8a67199254bf37712b92e24d3
+  # Windows doesn't support the restrict keyword
+  #
+  #      sed -i "s/restrict //" src/*
+  #      git diff -u > remove_restrict.diff
+  patches:                   # [win]
+    - remove_restrict.diff   # [win]
 
 build:
   number: 0

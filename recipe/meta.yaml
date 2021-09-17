@@ -1,5 +1,5 @@
 {% set name = "libaec" %}
-{% set version = "1.0.5" %}
+{% set version = "1.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: 563e3f9c614a6c848340eb070f01b4a915e9ebc8a67199254bf37712b92e24d3
+  sha256: 2675d26b24a081cdaaa48e0d085632e568e3f85f843f62b91fc51e1b3f5fe93f
   # Windows doesn't support the restrict keyword
   #
   #      sed -i "s/restrict /__restrict /" src/*
   #      git diff -u > remove_restrict.diff
-  patches:                   # [win]
+  patches:   # [win]
     - windows_restrict_keyword.diff   # [win]
 
 build:

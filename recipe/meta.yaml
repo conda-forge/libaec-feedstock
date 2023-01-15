@@ -12,12 +12,12 @@ source:
   #
   #      sed -i "s/restrict /__restrict /" src/*
   #      git diff -u > remove_restrict.diff
-  patches:   # [win]
+  patches:
     - windows_restrict_keyword.diff   # [win]
+    - disable_static_cmake.patch
 
 build:
-  number: 0
-  skip: true  # [win and vc<14]
+  number: 1
   run_exports:
     - {{ pin_subpackage('libaec') }}
 

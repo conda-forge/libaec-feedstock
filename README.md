@@ -1,11 +1,11 @@
-About libaec
-============
+About libaec-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libaec-feedstock/blob/main/LICENSE.txt)
 
 Home: https://gitlab.dkrz.de/k202009/libaec
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libaec-feedstock/blob/main/LICENSE.txt)
 
 Summary: Adaptive Entropy Coding library
 

@@ -1,5 +1,5 @@
 {% set name = "libaec" %}
-{% set version = "1.0.6" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: 2675d26b24a081cdaaa48e0d085632e568e3f85f843f62b91fc51e1b3f5fe93f
+  sha256: f9aca467c904bdde73977e6a10454e8bcac86b5cb5eb5a3e547f140babb8cf7b
   # Windows doesn't support the restrict keyword
   #
   #      sed -i "s/restrict /__restrict /" src/*
@@ -17,7 +17,7 @@ source:
     - disable_static_cmake.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('libaec') }}
 

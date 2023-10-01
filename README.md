@@ -1,11 +1,11 @@
-About libaec
-============
+About libaec-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libaec-feedstock/blob/main/LICENSE.txt)
 
 Home: https://gitlab.dkrz.de/k202009/libaec
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libaec-feedstock/blob/main/LICENSE.txt)
 
 Summary: Adaptive Entropy Coding library
 
@@ -23,14 +23,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/libaec-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/libaec-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>

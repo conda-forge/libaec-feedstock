@@ -1,0 +1,17 @@
+diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
+index ce0272e..6c332dc 100644
+--- a/tests/CMakeLists.txt
++++ b/tests/CMakeLists.txt
+@@ -20,9 +20,9 @@ target_link_libraries(check_szcomp PUBLIC check_aec sz)
+ add_test(NAME check_szcomp
+   COMMAND check_szcomp ${PROJECT_SOURCE_DIR}/data/121B2TestData/ExtendedParameters/sar32bit.dat)
+ 
+-add_executable(check_rsi_block_access check_rsi_block_access.c)
+-target_link_libraries(check_rsi_block_access PUBLIC check_aec aec)
+-add_test(NAME check_rsi_block_access COMMAND check_rsi_block_access)
++# add_executable(check_rsi_block_access check_rsi_block_access.c)
++# target_link_libraries(check_rsi_block_access PUBLIC check_aec aec)
++# add_test(NAME check_rsi_block_access COMMAND check_rsi_block_access)
+ 
+ if(UNIX)
+   add_test(

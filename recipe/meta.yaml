@@ -1,5 +1,5 @@
 {% set name = "libaec" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: f9aca467c904bdde73977e6a10454e8bcac86b5cb5eb5a3e547f140babb8cf7b
+  sha256: cde2097c6e0f18dbc4771930cebe907dfbdfcb7921f74d2594d46221581b6ef1
   patches:
     - 0001-Disable-building-the-static-library.patch
     # Windows doesn't support the restrict keyword

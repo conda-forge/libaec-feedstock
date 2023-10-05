@@ -15,11 +15,9 @@ source:
     #      sed -i "s/restrict /__restrict /" src/*
     #      git diff -u > remove_restrict.diff
     - 0002-Avoid-usage-of-gcc-keyword-restrict-in-visual-studio.patch  # [win]
-    # https://github.com/MathisRosenhauer/libaec/issues/26
-    - skip_check_rsi_block_access_windows.patch  # [win]
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libaec') }}
 

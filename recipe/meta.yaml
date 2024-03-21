@@ -1,5 +1,5 @@
 {% set name = "libaec" %}
-{% set version = "1.1.2" %}
+{% set version = "1.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: cde2097c6e0f18dbc4771930cebe907dfbdfcb7921f74d2594d46221581b6ef1
+  sha256: 1bafbfaef773bf8f5e5451e6c1f23da36c7199186cc0974fb9874bf723fe4270
   patches:
     - 0001-Disable-building-the-static-library.patch
     # Windows doesn't support the restrict keyword
@@ -17,7 +17,7 @@ source:
     - 0002-Avoid-usage-of-gcc-keyword-restrict-in-visual-studio.patch  # [win]
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('libaec') }}
 

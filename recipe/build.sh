@@ -6,6 +6,8 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_INCLUDEDIR=include \
+    -DBUILD_STATIC_LIBS=OFF \
+    -DBUILD_SHARED_LIBS=ON \
     ..
 make -j${CPU_COUNT}
 # remove two tests which need to download data

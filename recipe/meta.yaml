@@ -9,7 +9,6 @@ source:
   url: https://gitlab.dkrz.de/k202009/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
   sha256: b910e47d526ecbfb802ba6cdc6d262420f6ca436e87edfb57a32966f5148f762
   patches:
-    - 0001-Disable-building-the-static-library.patch
     # Windows doesn't support the restrict keyword
     #
     #      sed -i "s/restrict /__restrict /" src/*

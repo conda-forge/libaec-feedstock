@@ -9,7 +9,7 @@ source:
   sha256: 2e2a9a276783b8d7014cdb9127ffdb63e4c35dcd7b866d3383efda297f8cc040
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libaec') }}
 
@@ -23,6 +23,13 @@ requirements:
     - {{ compiler('cxx') }}
 
 test:
+  requires:
+    - cmake  # [target_platform == "win-arm64"]
+    - {{ compiler('c') }}  # [target_platform == "win-arm64"]
+  files:
+    - CMakeLists.txt  # [target_platform == "win-arm64"]
+    - test_aec.c  # [target_platform == "win-arm64"]
+    - test_sz.c  # [target_platform == "win-arm64"]
   commands:
     - test -f ${PREFIX}/lib/libaec${SHLIB_EXT}        # [not win]
     - test -f ${PREFIX}/lib/libsz${SHLIB_EXT}         # [not win]
@@ -31,6 +38,22 @@ test:
     - if not exist %LIBRARY_LIB%\\szip.lib exit 1     # [win]
     - if not exist %LIBRARY_BIN%\\szip.dll exit 1     # [win]
     - if not exist %LIBRARY_INC%\\libaec.h exit 1     # [win]
+    - cmake -S . -B test-build -G "NMake Makefiles"  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
+    - cmake --build test-build --config Release  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
+    - test-build\aec_consumer.exe  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
+    - test-build\sz_consumer.exe  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
+    - dumpbin /headers test-build\aec_consumer.exe | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
+    - dumpbin /headers test-build\sz_consumer.exe | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
+    - dumpbin /headers "%LIBRARY_BIN%\\aec.dll" | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
+    - dumpbin /headers "%LIBRARY_BIN%\\szip.dll" | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
+    - if errorlevel 1 exit 1  # [target_platform == "win-arm64"]
 
 about:
   home: https://gitlab.dkrz.de/k202009/libaec

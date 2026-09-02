@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://gitlab.dkrz.de/k202009/libaec/-/archive/v{{ version }}/libaec-v{{ version }}.tar.gz
-  sha256: 2e2a9a276783b8d7014cdb9127ffdb63e4c35dcd7b866d3383efda297f8cc040
+  url: https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v{{ version }}/libaec-{{ version }}.tar.gz
+  sha256: 70c2c5909523de64ab9f9cbbb5c28df7a91e2b6c7102f0dea8f2e3a940c35122
 
 build:
   number: 1

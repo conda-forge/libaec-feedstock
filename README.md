@@ -3,13 +3,13 @@ About libaec-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libaec-feedstock/blob/main/LICENSE.txt)
 
-Home: https://gitlab.dkrz.de/k202009/libaec
+Home: https://github.com/Deutsches-Klimarechenzentrum/libaec
 
 Package license: BSD-2-Clause
 
 Summary: Adaptive Entropy Coding library
 
-Development: https://gitlab.dkrz.de/k202009/libaec
+Development: https://github.com/Deutsches-Klimarechenzentrum/libaec
 
 Libaec provides fast lossless compression of 1 up to 32 bit wide signed or unsigned integers (samples).
 The library achieves best results for low entropy data as often encountered in space imaging instrument
@@ -48,6 +48,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5263&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libaec-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5263&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libaec-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr>

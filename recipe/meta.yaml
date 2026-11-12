@@ -1,12 +1,12 @@
-{% set version = "1.1.7" %}
+{% set version = "1.1.8" %}
 
 package:
   name: libaec
   version: {{ version }}
 
 source:
-  url: https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v{{ version }}/libaec-{{ version }}.tar.gz
-  sha256: cc7b93be9002e25a88b45d6b8d5f6120756cb5e1000613f91d803ce0beba24d9
+  url: https://github.com/Deutsches-Klimarechenzentrum/libaec/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 7f99d00fdc3217de5204f40a1eb35ba24b7efac4321df5ed1967f0c34f486c09
 
 build:
   number: 0

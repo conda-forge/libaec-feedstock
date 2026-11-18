@@ -9,7 +9,7 @@ source:
   sha256: 7f99d00fdc3217de5204f40a1eb35ba24b7efac4321df5ed1967f0c34f486c09
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libaec') }}
 
